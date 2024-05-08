@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend project </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main w-full min-h-screen bg-zinc-900">
+        <div class="form p-10 text-white">
+            <form action="/create" method="post">
+                <input class="block px-5 w-full rounded-md outline-none px-5 py-2 bg-zinc-800"   type="text" placeholder="Title goes" name="title">
+                <textarea class="block w-full rounded-md px-5 mt-2 py-2 resize-none bg-zinc-800" placeholder="write task here"  name="" id="" name="details"></textarea>
+                <input class="mt-2" bg-blue-600 px-5 py-2 rounded-md type="Submit" placeholder="put task">
+            </form>
+        </div>
+        <div class="tasks flex gap-3 flex-wrap p-10">
+            <% if(files.length>0){%>
+            <% files.forEach(function(val){%>
+                <div class="task w-72  px-3 rounded-md py-4 bg-zinc-800">
+                    <h1 class="text-white text-3xl tracking-tighter"><%=val%></h1>
+                    <a class="text-blue-500 inline-block mt-3 " href="/files/<%=val%>">Read More</a>
+                </div> 
+                <%})%>
+
+                <% } else {%>
+                <h3 class="text-zinc-600">No Task Yet.</h3>
+                <%}%>
+            <div class="task w-72 hidden px-3 rounded-md py-4 bg-zinc-800">
+                <h1 class="text-white text-3xl tracking-tighter">  Some task goes here</h1>
+                <a class="text-blue-500 inline-block mt-3 " href="">Read More</a>
+            </div>
+            <div class="task w-72 hidden  px-3 rounded-md py-4 bg-zinc-800">
+                <h1 class="text-white text-3xl tracking-tighter">some</h1>
+                <a class="text-blue-500 inline-block mt-3 " href="">Read More</a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
