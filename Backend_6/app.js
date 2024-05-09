@@ -46,7 +46,7 @@ app.get("/jwt",(req,res)=>{
   let token=  jwt.sign({email:"uttam7@gmail.com"},"secret");
   res.cookie("token",token);
   res.send("done");
-})
+}) 
 
 
 app.get("/token",(req,res)=>{
